@@ -4,7 +4,8 @@ import sys
 import csv
 import datetime
 import time
-import twitter
+import tweepy
+
 def test():
 #run speedtest-cli
     print 'running test'
@@ -33,19 +34,18 @@ def test():
     out_file.close()
 
     #con2twitter
-    token = ""
-    token_key = ""
-    con_secret = ""
-    con_secret_key = ""
-
-    my_auth = twitter.OAuth(token,token_key,con_secret,con_secret_key)
-    twit = twitter.Twitter(auth=my_auth)
+    def get_api():
+      auth = tweepy.OAuthHandler('consumer_key', 'consumer_secret')
+      auth.set_access_token('access_toke', 'access_token_secret')
+      return tweepy.API(auth)
 
     #try to tweet even if no connection
     if "Cannot" in test:
         try:
+            api = get_api()
             tweet="Hey @Comcast @ComcastCares why is my internet down? I pay for 60down\\5up in Knoxville TN? #comcastoutage #comcast"
-            twit.statuses.update(status=tweet)
+            status = api.update_status(status=tweet)
+            #twit.statuses.update(status=tweet)
         except:
             pass
 
@@ -53,8 +53,10 @@ def test():
     elif eval(d)<25:
         print "trying to tweet"
         try:
-            tweet=tweet="Hey @Comcast why is my internet speed " + str(int(eval(d))) + "down\\" + str(int(eval(u))) + "up when I pay for 50down\\5up in Knoxville TN? @ComcastCares @xfinity #comcast #speedtest"
-            twit.statuses.update(status=tweet)
+            api = get_api()
+            tweet="Hey @Comcast why is my internet speed " + str(int(eval(d))) + "down\\" + str(int(eval(u))) + "up when I pay for 50down\\5up in Knoxville TN? @ComcastCares @xfinity #comcast #speedtest"
+            status = api.update_status(status=tweet)
+            #twit.statuses.update(status=tweet)
         except Exception,e:
             print str(e)
             pass
