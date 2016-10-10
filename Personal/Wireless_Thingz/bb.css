@@ -40,6 +40,20 @@
    border-right: 26px solid red;
    border-bottom: 13px solid transparent;
 }
+p {
+	font-family: 'Oswald', sans-serif;
+}
+th {
+	font-family: 'Oswald', sans-serif;
+	color: 869830;
+}
+tr {
+	font-family: 'Oswald', sans-serif;
+}
+td {
+	font-family: 'Oswald', sans-serif;
+}
+
 
 </style>
 

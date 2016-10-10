@@ -1,13 +1,21 @@
 <html>
 <head>
-<title>Add_Inventory_WT</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="bb.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+<title>Wireless Thingz Update your inventory</title>
+
+</script>
 </head>
+
 <body bgcolor="#FFFFFF">
-<a href="/FTP_ROOT/WT_Inventory/show_inventory.php">back to main site</a>
- <form name="submit_form" action="add_inventory_script.php" method="post">
- <p>Inventory Type</p>
-  <select name="Item_Type">Select Inventory Type
+<?php
+echo "<p>Update Inventory item</p>";
+$ID=$_GET['ID'];
+echo $ID;
+?>
+<form name="submit_form" action="update_inventory.php" method="post"><input type="hidden" name="ID" value="<?php $Item_Name=$_GET['ID']; echo $Item_Name; ?>"><br><p>Item Type</p>
+<select  <select 
+name="Item_Type">Select Inventory Type
     <option value="">Pick One...
     <option value="Phone">Phone
     <option value="Case">Case
@@ -20,7 +28,7 @@
    <input type="text" name="Number">Number of items<br>
    <input type="text" name="Trade_Price">Trade Price<br>
    <input type="text" name="Imei_Meid">IMEI/MEID<br>
-<p>Select Carrier</p>
+<p>Carrier</p>
    <select name="Carrier">Select Carrier
     <option value="">Pick One...
     <option value="Verizon">Verizon
@@ -59,9 +67,5 @@
    <input type="submit"><input type="button" value="Done"
    onclick="window.location.href='show_inventory.php'">
 </form>
-
-
-
-  </form>
 </body>
 </html>
