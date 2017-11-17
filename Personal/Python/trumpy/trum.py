@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 #imports
-import tweepy, time, sys, os
+import tweepy, time, sys, os, random
 
 #You'll need to get this from dev.twitter.com for now directly inlined, but will out to a file at some point.:
 CONSUMER_KEY = '1234'#keep the quotes, replace this with your consumer key
@@ -20,7 +20,7 @@ for status in api.user_timeline(screen_name=user, count=1, trimuser=1):
     status = str(status.id)
     print 'id of latest tweet =', status
     #must make sure that script is run from root directory or else issues.
-    with open('./tweetid.txt', 'w+') as tweetid:
+    with open('./tweetid.txt', 'r+') as tweetid:
     	first_line = tweetid.readline()
     print 'id of last tweet we responded to =', first_line
     tweetid.close()
@@ -32,7 +32,7 @@ for status in api.user_timeline(screen_name=user, count=1, trimuser=1):
         tweet_id.write(status)
         tweet_id.truncate()
         tweet_id.close()
-	api.update_status('@' + user + ' Shut up', status)
+	api.update_status('@' + user + ' Shut up' + str(random.randint(0, 10000)), status)
       #  print status
 
 
