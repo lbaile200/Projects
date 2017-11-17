@@ -20,7 +20,7 @@ for status in api.user_timeline(screen_name=user, count=1, trimuser=1):
     status = str(status.id)
     print 'id of latest tweet =', status
     #must make sure that script is run from root directory or else issues.
-    with open('./tweetid.txt', 'r+') as tweetid:
+    with open('./tweetid.txt', 'w+') as tweetid:
     	first_line = tweetid.readline()
     print 'id of last tweet we responded to =', first_line
     tweetid.close()
