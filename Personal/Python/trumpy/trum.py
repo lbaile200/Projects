@@ -32,7 +32,7 @@ for status in api.user_timeline(screen_name=user, count=1, trimuser=1):
         tweet_id.write(status)
         tweet_id.truncate()
         tweet_id.close()
-	api.update_status("Shut up", in_reply_to_status_id = status)
+	api.update_status('@' + user + ' Shut up', status)
       #  print status
 
 
