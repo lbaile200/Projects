@@ -1,0 +1,9 @@
+pip list -- lists all installed packages by pip
+soundscrape -- downloads stuff from soundcloud
+youtube-dl -- downloads videos or MP3 from youtube
+systemd-analyze -- analyze boot time.  Can be used with --blame for detail
+df -h -- show space used
+journalctl -- system logging (also dmesg for hardware log or -b for logs since boot)
+systemctl list-unit-files -- show all enabled processes
+
+

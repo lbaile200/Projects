@@ -43,7 +43,11 @@ function newwindow(myurl,xsize,ysize)
 </script>
 
 <!BEGIN MAIN TABLE-->
-
+<p>
+<a href=/FTP_ROOT/WT_Inventory/main_form.php>Add more inventory</a>
+&nbsp / &nbsp
+<a href=/FTP_ROOT/WT_Inventory/show_sold_inventory.php>Show sold inventory</a>
+</p>
 <?php
  $con=mysqli_connect("localhost","root","Purplefishland7.","WT_Inventory");
  // Check connection
@@ -53,7 +57,7 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 $sort=$_GET["sort"];
 
-$result = mysqli_query($con,"SELECT ID, Item_Type, Item_Name, Item_Price_Out, Cash_Price, Number, Trade_Price, Carrier, Status, Date_Purchased_In, Imei_Meid, Associate, Notes FROM Inventory ORDER BY $sort ASC");
+$result = mysqli_query($con,"SELECT ID, Item_Type, Item_Name, Item_Price_Out, Cash_Price, Number, Trade_Price, Carrier, Status, Date_Purchased_In, Imei_Meid, Associate, Notes FROM Inventory WHERE Status!='SOLD' ORDER BY $sort ASC");
 
 //$drop = mysqli_query($con, "DELETE FROM main $user WHERE user LIKE $row");
 //while($row = mysqli_fetch_array($result))
@@ -97,8 +101,7 @@ $alink="javascript:newwindow(\"update_inventory_form.php?ID=".$ID." &sw=0\",500,
   echo "<td><p><a href='".$alink."'>".EDIT."</p></td>\n";
 $alink="javascript:newwindow(\"delete_inventory.php?ID=".$ID." &sw=0\",500,500)";
   echo "<td><p><a href='".$alink."'>".DELETE."</p></td>\n";
-$alink="javascript:newwindow(\"Sell_Inventory_form.php?ID=".$ID." &sw=0\",500,500)";
-  echo "<td><p><a href='".$alink."'>".SOLD."</p></td>\n";
+
 echo "</tr>";
 }
 echo "</table>";

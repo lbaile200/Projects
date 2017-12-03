@@ -9,7 +9,7 @@ import tweepy
 def test():
 #run speedtest-cli
     print 'running test'
-    test = os.popen("python /home/cabbage/.local/lib/python2.7/site-packages/speedtest_cli.py --simple").read()
+    test = os.popen("python /home/cabbage/.local/lib/python2.7/site-packages/speedtest.py --simple").read()
     print 'ran'
     #split the 3 line result (ping,down,up)
     lines = test.split('\n')
@@ -28,7 +28,7 @@ def test():
         u = lines[2][8:12]
     print date,p, d, u
     #save the data to file for local network plotting
-    out_file = open('/var/www/assets/data.csv', 'a')
+    out_file = open('/home/cabbage/Documents/speeds.csv', 'a')
     writer = csv.writer(out_file)
     writer.writerow((ts*1000,p,d,u))
     out_file.close()
