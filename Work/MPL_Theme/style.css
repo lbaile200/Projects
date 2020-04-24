@@ -1,0 +1,107 @@
+/*
+Theme Name: Marketplace Wordpress Theme
+Author: Lucas Bailey
+*/
+
+body { 
+    word-wrap: break-word;
+    overflow-x: hidden;
+
+
+}
+
+header {
+    background: #1B4072;
+    width: 100%;
+}
+
+navbar-toggler {
+    float: left;
+    position: relative;
+
+}
+
+.navbar {
+    color: #1B4072
+}
+
+.banner {
+
+    padding-bottom: 1em;
+    padding-top: 1em;
+    text-align: center;
+    background: #1B4072;
+
+}
+.title {
+    text-align: center;
+}
+
+.posts {
+
+    text-align: left;
+    margin: 0 auto;
+
+}
+
+.wp-custom-header video,
+.wp-custom-header img,
+.wp-custom-header iframe {
+      position: fixed;
+    	height: auto;
+    	left: 50%;
+    	max-width: 1000%;
+    	min-height: 100%;
+    	min-width: 100%;
+    	min-width: 100vw; /* vw prevents 1px gap on left that 100% has */
+    	width: auto;
+    	top: 50%;
+    	padding-bottom: 1px; /* Prevent header from extending beyond the footer */
+    	-ms-transform: translateX(-50%) translateY(-50%);
+    	-moz-transform: translateX(-50%) translateY(-50%);
+    	-webkit-transform: translateX(-50%) translateY(-50%);
+    	transform: translateX(-50%) translateY(-50%);
+}
+
+@supports ( object-fit: cover ) {
+    .wp-custom-header video,
+    .wp-custom-header img,
+    .wp-custom-header iframe {
+        height: 100%;
+        left: 0;
+        -o-object-fit: cover;
+        object-fit: cover;
+    	  top: 0;
+    	  -ms-transform: none;
+    	  -moz-transform: none;
+    	  -webkit-transform: none;
+    	  transform: none;
+    	  width: 100%;
+    }
+}
+
+blockquote{
+    margin: 0 0 1em;
+    background: lightgray;
+    position: absolute;
+    right: 0;
+    left: 0;
+
+}
+
+.wp-block-quote.is-style-large {
+    margin: 0 0 16px;
+    padding: 0 1em;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.wp-block-cover {
+    position: absolute;
+    right: 0;
+    left: 0;
+    max-height: 430px;
+
+
+}
