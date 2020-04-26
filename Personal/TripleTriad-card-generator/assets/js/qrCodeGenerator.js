@@ -27,15 +27,15 @@ function showSearch() {
 }
 
 function backToSearch() {
-  delete warriors;
-  delete crowns;
-  delete roses;
-  delete dragons;
-  delete starRating;
-  delete curve_test;
+location.reload();
+return false;
   showSearch();
 }
+function getstats(mundaneId) {
 
+
+  
+}
 function doPlayer(mundaneId, element) {
   var ParkName = element.children[2].textContent,
       KingdomName = element.children[3].textContent;

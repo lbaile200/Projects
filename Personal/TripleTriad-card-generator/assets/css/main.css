@@ -3609,20 +3609,20 @@ input, select, textarea {
 			margin-top: -25%;
 			margin-left: 5px;
 			position: relative;
-			font-size: 1.5em;
+			font-size: 1em;
 		}
 		#anchor-east{
 			float: right;
 			margin-top: -25%;
 			margin-right: 5px;
 			position: relative;
-			font-size: 1.5em;
+			font-size: 1em;
 		}
 		#anchor-north{
-			font-size: 1.5em;
+			font-size: 1em;
 		}
 		#anchor-south{
-			font-size: 1.5em
+			font-size: 1em
 		}
 		#textcontainer{
 			border: solid black 2px;
@@ -3637,8 +3637,8 @@ input, select, textarea {
 		}
 		#image-box{
 			border: solid 1px black;
-			height: auto;
-			width: 155px;
+			height: 120px;
+			width: 120px;
 			margin: auto;
 			position: relative;
 			background-color: white;

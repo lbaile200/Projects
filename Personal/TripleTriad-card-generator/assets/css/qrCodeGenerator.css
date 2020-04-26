@@ -1,6 +1,7 @@
 @media print {
   #header {
     border-bottom-width: 0;
+    size: 6.223cm 8.89cm;
   }
   .noprint {
     display: none;

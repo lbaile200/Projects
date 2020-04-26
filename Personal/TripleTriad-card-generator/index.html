@@ -35,9 +35,12 @@
             </section>
             <ul class="actions" id="backToSearch" style="display: none;">
               <li><a href="#" class="button" onClick="backToSearch()">Back to search</a></li>
+              <li><button onclick="window.print()">Print this Card</button></li>
             </ul>
+            <!--
             <button class="button" id="copyToClipboard" onClick="copyPlayerCard()" style="display: none;">Copy card
               image to clipboard</button>
+            -->
           </div>
           <div class="searchResults" hidden>
             <table id="playerList" style="width:100%">
@@ -49,12 +52,13 @@
               </tr>
             </table>
           </div>
+          </section>
           <div class="playerInfo" id="playerBox" style="display: none;">
             <div id="borderdiv">
               <div id ="anchor-north">N</div>
               <div id="image-box">
               <img class="smallbottommarginagain" id="playerImg" src="" alt="Player Image"
-                style="width:150px;height:150px;">
+                style="width:90% ;height:90%;">
               </div>
                 <div id="anchor-west">
                   W
